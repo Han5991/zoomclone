@@ -8,11 +8,9 @@ function makeMessage(type, payload) {
     return JSON.stringify(msg);
 }
 
-function handleOpen() {
+socket.addEventListener("open", () => {
     console.log("Connected to Server ✅");
-}
-
-socket.addEventListener("open", handleOpen);
+});
 
 socket.addEventListener("message", (message) => {
     const li = document.createElement("li");
@@ -28,6 +26,9 @@ function handleSubmit(event) {
     event.preventDefault();
     const input = messageForm.querySelector("input");
     socket.send(makeMessage("new_message", input.value));
+    const li = document.createElement("li");
+    li.innerText = `You: ${input.value}`;
+    messageList.append(li);
     input.value = "";
 }
 
