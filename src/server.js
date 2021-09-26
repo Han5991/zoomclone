@@ -16,7 +16,7 @@ const wsServer = SocketIO(httpServer);
 function publicRooms() {
     const {
         sockets: {
-            adapter: { sids, rooms },
+            adapter: {sids, rooms},
         },
     } = wsServer;
     const publicRooms = [];
