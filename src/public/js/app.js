@@ -24,6 +24,8 @@ async function getCameras() {
     }
 }
 
+
+
 async function getMedia() {
     try {
         myStream = await navigator.mediaDevices.getUserMedia({
