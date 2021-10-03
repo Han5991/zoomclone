@@ -28,6 +28,7 @@ async function getCameras() {
     }
 }
 
+
 async function getMedia(deviceId) {
     const initialsConstrains = {
         audio: true,
